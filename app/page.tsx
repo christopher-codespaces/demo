@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react"; // Just for ChevronRight, if you need other icons you can use alternatives
-
+import Hero from "../public/hero.png"
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -73,13 +73,13 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative h-screen">
-        <Image
-          src="https://sdmntprwestus.oaiusercontent.com/files/00000000-2038-5230-9f32-c3d9aa1579f4/raw?se=2025-04-01T19%3A40%3A33Z&sp=r&sv=2024-08-04&sr=b&scid=e3473a06-e382-56f0-bdaf-d59466f28381&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A36%3A56Z&ske=2025-04-02T18%3A36%3A56Z&sks=b&skv=2024-08-04&sig=KUiJB78LGytW3gOzifjstWoZubpxR5lMrDkAPz51N/4%3D"
-          alt="Padel player in action"
-          fill
-          className="object-cover brightness-50 transition-all duration-500 ease-in-out"
-          priority
-        />
+      <Image
+  src="/hero.png" // No need for "../public"
+  alt="Padel player in action"
+  fill
+  className="object-cover brightness-50 transition-all duration-500 ease-in-out"
+  priority
+/>
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
           <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
             WHERE PADEL MEETS <span className="text-red-600">LUXURY</span>
@@ -104,21 +104,21 @@ export default function Home() {
                 name: "Carbon Pro Racket",
                 description: "Professional-grade performance",
                 price: "$249.00",
-                image: "https://sdmntprwestus2.oaiusercontent.com/files/00000000-1b2c-51f8-886c-9c757c0126b7/raw?se=2025-04-01T20%3A20%3A09Z&sp=r&sv=2024-08-04&sr=b&scid=5b78b3a3-965d-517f-945e-0bded0abd621&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A47%3A13Z&ske=2025-04-02T18%3A47%3A13Z&sks=b&skv=2024-08-04&sig=ziWQTFMGjt/QOuPgD/pHjqGH98zOAIQBuMxjRMNC7GM%3D",
+                image: "./prod1.png",
               },
               {
                 id: 2,
                 name: "Elite Court Shoes",
                 description: "Superior grip and comfort",
                 price: "$179.00",
-                image: "https://sdmntprwestus2.oaiusercontent.com/files/00000000-0a6c-51f8-8595-eaf854945975/raw?se=2025-04-01T20%3A21%3A38Z&sp=r&sv=2024-08-04&sr=b&scid=5c7e46ed-ce0e-5bfd-921b-95e0c18c5e74&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A37%3A05Z&ske=2025-04-02T18%3A37%3A05Z&sks=b&skv=2024-08-04&sig=L8aJBb%2BeCAznvynSjkyWcGubEXE1e4wRpaqZHS4r/gI%3D",
+                image: "./prod2.png",
               },
               {
                 id: 3,
                 name: "Pro Tennis Bag",
                 description: "Spacious & durable for all essentials",
                 price: "$129.00",
-                image: "https://sdmntprwestus2.oaiusercontent.com/files/00000000-f7a0-51f8-8e9b-b6a36b1f0056/raw?se=2025-04-01T20%3A32%3A36Z&sp=r&sv=2024-08-04&sr=b&scid=68c2e42c-36bf-52f0-8dae-8c8a25bc5fac&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A40%3A13Z&ske=2025-04-02T18%3A40%3A13Z&sks=b&skv=2024-08-04&sig=l9FeeErQuVStomGP7dgehxM0O2xGCHoUB9TNjwuif9Q%3D",
+                image: "./prod3.png",
               },
             ].map((product) => (
               <div key={product.id} className="group relative overflow-hidden rounded-lg">
@@ -190,23 +190,23 @@ export default function Home() {
       JOIN OUR <span className="text-red-600">COMMUNITY</span>
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {[
-        "https://sdmntprwestus2.oaiusercontent.com/files/00000000-4b28-51f8-9c65-72764a0d0dd8/raw?se=2025-04-01T19%3A42%3A53Z&sp=r&sv=2024-08-04&sr=b&scid=69d9b710-5b54-57ed-af41-3985566051e7&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T08%3A45%3A35Z&ske=2025-04-02T08%3A45%3A35Z&sks=b&skv=2024-08-04&sig=fY7xeLOKG0VUk3JXblmGTKM3Hwl7OwnF/iukhYwHsUk%3D", // Image 1
-        "https://sdmntprwestus2.oaiusercontent.com/files/00000000-a8a4-51f8-afa2-0915682035c8/raw?se=2025-04-01T20%3A13%3A21Z&sp=r&sv=2024-08-04&sr=b&scid=1650ab9d-cf29-53ee-bef6-04f6682a01f7&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T11%3A57%3A32Z&ske=2025-04-02T11%3A57%3A32Z&sks=b&skv=2024-08-04&sig=kImlIe5sQSvj0cUL9HXttG2VCZcyCuJsuZgK4tP/W5c%3D", // Image 2
-        "https://sdmntprwestus2.oaiusercontent.com/files/00000000-e194-51f8-bada-dff18d3552d4/raw?se=2025-04-01T20%3A16%3A43Z&sp=r&sv=2024-08-04&sr=b&scid=7ed17649-8c09-5914-8f92-0241ffa8ab3b&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A14%3A46Z&ske=2025-04-02T18%3A14%3A46Z&sks=b&skv=2024-08-04&sig=j38oz9/sYqOqYS4TMYd2aedxQ7FAbHIeqRul6AlIjT8%3D", // Image 3
-        "https://d3p3fw3rutb1if.cloudfront.net/photos/4ee3bde9-1483-4c34-8b23-594c0dfddbb2", // Image 4
-      ].map((imageSrc, index) => (
-        <div key={index} className="overflow-hidden rounded-lg">
-          <Image
-            src={imageSrc}
-            alt={`Community ${index + 1}`}
-            width={500}
-            height={500}
-            className="h-full w-full object-cover"
-          />
-        </div>
-      ))}
+  {[
+    "/comm2.png", // Image 1 (from public folder)
+    "/comm3.png", // Image 2 (external URL)
+    "/community.png",
+    "/community1.png",
+  ].map((imageSrc, index) => (
+    <div key={index} className="overflow-hidden rounded-lg">
+      <Image
+        src={imageSrc}
+        alt={`Community ${index + 1}`}
+        width={500}
+        height={500}
+        className="h-full w-full object-cover"
+      />
     </div>
+  ))}
+</div>
     <div className="mt-8 flex justify-center space-x-4">
       <Link href="#" className="text-black hover:text-red-600">
         <i className="fab fa-instagram h-6 w-6"></i>
