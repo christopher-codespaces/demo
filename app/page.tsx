@@ -1,7 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, Instagram, Facebook, Twitter } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react"; // Just for ChevronRight, if you need other icons you can use alternatives
 
 export default function Home() {
   return (
@@ -27,6 +27,7 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center space-x-4">
+            {/* Account Icon */}
             <Link href="#" className="text-white hover:text-red-600">
               <span className="sr-only">Account</span>
               <svg
@@ -45,6 +46,8 @@ export default function Home() {
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
             </Link>
+
+            {/* Cart Icon */}
             <Link href="#" className="text-white hover:text-red-600">
               <span className="sr-only">Cart</span>
               <svg
@@ -71,10 +74,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen">
         <Image
-          src="https://d3p3fw3rutb1if.cloudfront.net/photos/35c23784-905b-4cd3-a818-c41a7ca77427"
+          src="https://sdmntprwestus.oaiusercontent.com/files/00000000-2038-5230-9f32-c3d9aa1579f4/raw?se=2025-04-01T19%3A40%3A33Z&sp=r&sv=2024-08-04&sr=b&scid=e3473a06-e382-56f0-bdaf-d59466f28381&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A36%3A56Z&ske=2025-04-02T18%3A36%3A56Z&sks=b&skv=2024-08-04&sig=KUiJB78LGytW3gOzifjstWoZubpxR5lMrDkAPz51N/4%3D"
           alt="Padel player in action"
           fill
-          className="object-cover brightness-50"
+          className="object-cover brightness-50 transition-all duration-500 ease-in-out"
           priority
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
@@ -91,27 +94,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Products */}
       <section className="bg-white py-20">
         <div className="container">
           <h2 className="text-3xl font-bold tracking-tight text-black mb-12 text-center">PREMIUM GEAR</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="group relative overflow-hidden rounded-lg">
+            {[
+              {
+                id: 1,
+                name: "Carbon Pro Racket",
+                description: "Professional-grade performance",
+                price: "$249.00",
+                image: "https://sdmntprwestus2.oaiusercontent.com/files/00000000-1b2c-51f8-886c-9c757c0126b7/raw?se=2025-04-01T20%3A20%3A09Z&sp=r&sv=2024-08-04&sr=b&scid=5b78b3a3-965d-517f-945e-0bded0abd621&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A47%3A13Z&ske=2025-04-02T18%3A47%3A13Z&sks=b&skv=2024-08-04&sig=ziWQTFMGjt/QOuPgD/pHjqGH98zOAIQBuMxjRMNC7GM%3D",
+              },
+              {
+                id: 2,
+                name: "Elite Court Shoes",
+                description: "Superior grip and comfort",
+                price: "$179.00",
+                image: "https://sdmntprwestus2.oaiusercontent.com/files/00000000-0a6c-51f8-8595-eaf854945975/raw?se=2025-04-01T20%3A21%3A38Z&sp=r&sv=2024-08-04&sr=b&scid=5c7e46ed-ce0e-5bfd-921b-95e0c18c5e74&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A37%3A05Z&ske=2025-04-02T18%3A37%3A05Z&sks=b&skv=2024-08-04&sig=L8aJBb%2BeCAznvynSjkyWcGubEXE1e4wRpaqZHS4r/gI%3D",
+              },
+              {
+                id: 3,
+                name: "Pro Tennis Bag",
+                description: "Spacious & durable for all essentials",
+                price: "$129.00",
+                image: "https://sdmntprwestus2.oaiusercontent.com/files/00000000-f7a0-51f8-8e9b-b6a36b1f0056/raw?se=2025-04-01T20%3A32%3A36Z&sp=r&sv=2024-08-04&sr=b&scid=68c2e42c-36bf-52f0-8dae-8c8a25bc5fac&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A40%3A13Z&ske=2025-04-02T18%3A40%3A13Z&sks=b&skv=2024-08-04&sig=l9FeeErQuVStomGP7dgehxM0O2xGCHoUB9TNjwuif9Q%3D",
+              },
+            ].map((product) => (
+              <div key={product.id} className="group relative overflow-hidden rounded-lg">
                 <div className="aspect-square overflow-hidden bg-gray-100">
                   <Image
-                    src="https://sdmntprwestus.oaiusercontent.com/files/00000000-afc8-5230-82d6-8e41c603acf9/raw?se=2025-04-01T12%3A35%3A03Z&sp=r&sv=2024-08-04&sr=b&scid=9ee1a3da-02c9-5b0f-b0e3-5b6ec56e2a62&skoid=e825dac8-9fae-4e05-9fdb-3d74e1880d5a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-31T18%3A11%3A22Z&ske=2025-04-01T18%3A11%3A22Z&sks=b&skv=2024-08-04&sig=d8XrJUHCHundoUgD7r1SYxx6lzyY0L6djsCsZpugfYc%3D"
-                    alt={`Product ${item}`}
+                    src={product.image}
+                    alt={product.name}
                     width={600}
                     height={600}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-medium text-black">Carbon Pro Racket</h3>
-                  <p className="mt-1 text-sm text-gray-600">Professional-grade performance</p>
+                  <h3 className="text-lg font-medium text-black">{product.name}</h3>
+                  <p className="mt-1 text-sm text-gray-600">{product.description}</p>
                   <div className="mt-2 flex items-center justify-between">
-                    <span className="text-lg font-bold text-black">$249.00</span>
+                    <span className="text-lg font-bold text-black">{product.price}</span>
                     <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white">
                       Add to Cart
                     </Button>
@@ -127,6 +151,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Experiences Section */}
       <section className="relative py-20 bg-black">
@@ -147,7 +172,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-video overflow-hidden rounded-lg">
               <Image
-                src="https://sdmntprwestus.oaiusercontent.com/files/00000000-2038-5230-9f32-c3d9aa1579f4/raw?se=2025-04-01T12%3A57%3A23Z&sp=r&sv=2024-08-04&sr=b&scid=ca23257b-fc4a-5954-bc75-e83b2901d26d&skoid=e825dac8-9fae-4e05-9fdb-3d74e1880d5a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-31T18%3A04%3A55Z&ske=2025-04-01T18%3A04%3A55Z&sks=b&skv=2024-08-04&sig=d/FGY6fzuyWnByxyfGhYmoup9TZ3je1RKkMAxlxvB7w%3D"
+                src="https://images.pexels.com/photos/1165002/pexels-photo-1165002.jpeg"
                 alt="Luxury padel experience"
                 width={1280}
                 height={720}
@@ -158,62 +183,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Community Section */}
-      <section className="py-20 bg-white">
-        <div className="container">
-          <h2 className="text-3xl font-bold tracking-tight text-black mb-12 text-center">
-            JOIN OUR <span className="text-red-600">COMMUNITY</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="overflow-hidden rounded-lg">
-                <Image
-                  src="/placeholder.svg?height=500&width=500"
-                  alt={`Community ${item}`}
-                  width={500}
-                  height={500}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 flex justify-center space-x-4">
-            <Link href="#" className="text-black hover:text-red-600">
-              <Instagram className="h-6 w-6" />
-              <span className="sr-only">Instagram</span>
-            </Link>
-            <Link href="#" className="text-black hover:text-red-600">
-              <Facebook className="h-6 w-6" />
-              <span className="sr-only">Facebook</span>
-            </Link>
-            <Link href="#" className="text-black hover:text-red-600">
-              <Twitter className="h-6 w-6" />
-              <span className="sr-only">Twitter</span>
-            </Link>
-          </div>
+     {/* Community Section */}
+    <section className="py-20 bg-white">
+  <div className="container">
+    <h2 className="text-3xl font-bold tracking-tight text-black mb-12 text-center">
+      JOIN OUR <span className="text-red-600">COMMUNITY</span>
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {[
+        "https://sdmntprwestus2.oaiusercontent.com/files/00000000-4b28-51f8-9c65-72764a0d0dd8/raw?se=2025-04-01T19%3A42%3A53Z&sp=r&sv=2024-08-04&sr=b&scid=69d9b710-5b54-57ed-af41-3985566051e7&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T08%3A45%3A35Z&ske=2025-04-02T08%3A45%3A35Z&sks=b&skv=2024-08-04&sig=fY7xeLOKG0VUk3JXblmGTKM3Hwl7OwnF/iukhYwHsUk%3D", // Image 1
+        "https://sdmntprwestus2.oaiusercontent.com/files/00000000-a8a4-51f8-afa2-0915682035c8/raw?se=2025-04-01T20%3A13%3A21Z&sp=r&sv=2024-08-04&sr=b&scid=1650ab9d-cf29-53ee-bef6-04f6682a01f7&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T11%3A57%3A32Z&ske=2025-04-02T11%3A57%3A32Z&sks=b&skv=2024-08-04&sig=kImlIe5sQSvj0cUL9HXttG2VCZcyCuJsuZgK4tP/W5c%3D", // Image 2
+        "https://sdmntprwestus2.oaiusercontent.com/files/00000000-e194-51f8-bada-dff18d3552d4/raw?se=2025-04-01T20%3A16%3A43Z&sp=r&sv=2024-08-04&sr=b&scid=7ed17649-8c09-5914-8f92-0241ffa8ab3b&skoid=b53ae837-f585-4db7-b46f-2d0322fce5a9&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-04-01T18%3A14%3A46Z&ske=2025-04-02T18%3A14%3A46Z&sks=b&skv=2024-08-04&sig=j38oz9/sYqOqYS4TMYd2aedxQ7FAbHIeqRul6AlIjT8%3D", // Image 3
+        "https://d3p3fw3rutb1if.cloudfront.net/photos/4ee3bde9-1483-4c34-8b23-594c0dfddbb2", // Image 4
+      ].map((imageSrc, index) => (
+        <div key={index} className="overflow-hidden rounded-lg">
+          <Image
+            src={imageSrc}
+            alt={`Community ${index + 1}`}
+            width={500}
+            height={500}
+            className="h-full w-full object-cover"
+          />
         </div>
-      </section>
+      ))}
+    </div>
+    <div className="mt-8 flex justify-center space-x-4">
+      <Link href="#" className="text-black hover:text-red-600">
+        <i className="fab fa-instagram h-6 w-6"></i>
+        <span className="sr-only">Instagram</span>
+      </Link>
+      <Link href="#" className="text-black hover:text-red-600">
+        <i className="fab fa-facebook h-6 w-6"></i>
+        <span className="sr-only">Facebook</span>
+      </Link>
+      <Link href="#" className="text-black hover:text-red-600">
+        <i className="fab fa-twitter h-6 w-6"></i>
+        <span className="sr-only">Twitter</span>
+      </Link>
+    </div>
+  </div>
+    </section>
 
-      {/* Newsletter */}
-      <section className="py-16 bg-red-600">
-        <div className="container">
-          <div className="flex flex-col items-center text-center">
-            <h2 className="text-2xl font-bold tracking-tight text-white mb-4">STAY UPDATED</h2>
-            <p className="text-white/90 mb-6 max-w-2xl">
-              Subscribe to our newsletter for exclusive offers, events, and the latest in padel luxury.
-            </p>
-            <form className="flex w-full max-w-md flex-col gap-2 sm:flex-row">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="h-10 rounded-md border border-white/20 bg-white/10 px-4 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 sm:flex-1"
-                required
-              />
-              <Button className="h-10 bg-white text-red-600 hover:bg-white/90">SUBSCRIBE</Button>
-            </form>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-black py-12">
@@ -227,88 +237,10 @@ export default function Home() {
                 The ultimate destination for padel enthusiasts seeking premium experiences.
               </p>
             </div>
-            <div>
-              <h3 className="text-sm font-medium text-white mb-4">SHOP</h3>
-              <ul className="space-y-2 text-sm text-white/60">
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Rackets
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Apparel
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Accessories
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Limited Editions
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-white mb-4">COMPANY</h3>
-              <ul className="space-y-2 text-sm text-white/60">
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Sustainability
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-white mb-4">LEGAL</h3>
-              <ul className="space-y-2 text-sm text-white/60">
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Terms & Conditions
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Shipping Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-red-600">
-                    Returns & Refunds
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm text-white/60">
-            <p>© {new Date().getFullYear()} Wilson Paddle Club. All rights reserved.</p>
+            {/* Footer content */}
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
